@@ -26,6 +26,8 @@
     <a-button ghost disabled>고스트</a-button>
   </div>
   <a-space style="width: 100%">
+
+<!--    loading, 로딩은  빙글빙글도는 애니메이션을 추가함-->
       <a-button type="primary" size="small" loading>작은 로딩</a-button>
       <a-button type="primary" loading>로딩</a-button>
   </a-space>
@@ -40,11 +42,92 @@
     <a-button type="primary" loading />
     <a-button type="primary" shape="circle" loading/>
     <a-button danger shape="round" loading/>
+    <a-button type="primary" shape="circle">원
+    <template #icon><SearcOutlined/></template></a-button>
+    <a-button type="primary" shape="circle>">A</a-button>
+
+    <a-button type="primary">
+    <template #icon><SearchOutlined /></template>
+    검색
+  </a-button>
+  <a-button shape="circle">
+    <template #icon><SearchOutlined /></template>
+  </a-button>
+  <a-button>
+    <template #icon><SearchOutlined /></template>
+    검색
+  </a-button>
+  <a-button shape="circle">
+    <template #icon><SearchOutlined /></template>
+  </a-button>
+  <a-button>
+    <template #icon><SearchOutlined /></template>
+    검색
+  </a-button>
+  <a-button type="dashed" shape="circle">
+    <template #icon><SearchOutlined /></template>
+  </a-button>
+
+    <a-button type="dashed">
+      <template #icon><SearchOutlined/></template>
+      검색
+    </a-button>
+    <a-button href="https://www.google.com">
+      <template #icon><SearchOutlined/></template>
+    </a-button>
+
+    <br/>
+    <br/>
+<!--    tooltip, 툴팁은 마우스를 가져고 갔을 때 title이 나옴-->
+    <a-tooltip title="search">
+      <a-button type="primary" shape="circle" size="large">
+        <template #icon><SearchOutlined/></template>
+        검색
+      </a-button>
+    </a-tooltip>
+
+    <a-button type="primary" shape="circle" size="large">A</a-button>
+    <a-button type="primary" size="large">
+      <template #icon><Searchoulined/></template>
+      검색
+    </a-button>
+
+    <a-tooltip title="search">
+      <a-button shape="circle" size="large">
+        <template #icon><SearchOutlined/></template>
+      </a-button>
+    </a-tooltip>
+    <a-button size="large">
+      <template #icon><SearchOutlined/></template>
+      검색
+    </a-button>
+    <br/>
+    <a-tooltip title="search">
+      <a-button shape="circle" size="large">
+        <template #icon><SearchOutlined/></template>
+      검색
+      </a-button>
+    </a-tooltip>
+    <a-button size="large">
+      <template><SearchOutlined/></template>
+      검색
+    </a-button>
+    <a-tooltip title="search">
+      <a-button type="dashed" shape="circle" size="large">
+        <template #icon><SearchOutlined/></template>
+      </a-button>
+    </a-tooltip>
+    <a-button type="dashed" size="large">
+      <template #icon><SearchOutlined/></template>
+    </a-button>
   </a-space>
+
 </template>
+
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
 import { PoweroffOutlined } from '@ant-design/icons-vue';
+import { SearchOutlined } from '@ant-design/icons-vue';
 
 interface DelayLoading {
   delay: number;
@@ -68,6 +151,7 @@ export default defineComponent({
   },
 });
 </script>
+
 
 <script setup>
 </script>
