@@ -8,7 +8,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@ant-design/icons-vue": "^7.0.0",
     "ant-design-vue": "^4.0.3",
+    "axios-mock-adapter": "^1.22.0",
     "less": "^4.2.0",
     "vue": "^3.3.4"
   },
