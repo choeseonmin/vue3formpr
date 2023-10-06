@@ -6,8 +6,8 @@ import { createApp } from 'vue'
 // import App from './Make2.vue';
 // import App from './Make.vue';
 // import App from './Noticeform.vue';
-import App from './Noticeform2.vue';
-// import App from './Noticeform3.vue';
+// import App from './Noticeform2.vue';
+import App from './Noticeform3.vue';
 // import App from './dropdown1.vue';
 
 
