@@ -209,42 +209,100 @@
     </a-row>
   </div>
 
+  <br>
+  <div>
+    <a-space direction="vertical" :style="{ width:'100%' }" size="[0, 48]">
+      <a-layout>
+        <a-layout-header :style="headerStyle">Header</a-layout-header>
+        <a-layout-content :style="contentStyle">Content</a-layout-content>
+        <a-layout-footer :style="footerStyle">Footer</a-layout-footer>
+      </a-layout>
 
+      <a-layout>
+      <a-layout-header :style="headerStyle">Header</a-layout-header>
+      <a-layout>
+        <a-layout-sider :style="siderStyle">Sider</a-layout-sider>
+        <a-layout-content :style="contentStyle">Content</a-layout-content>
+      </a-layout>
+        <a-layout-footer :style="footerStyle">Footer</a-layout-footer>
+      </a-layout>
 
-
-
+    </a-space>
+  </div>
 
 
 
 </template>
 
-<script lang="ts">
+
+
+
+
+<script lang="ts" setup>
 import { defineComponent, ref } from 'vue';
 import { PoweroffOutlined } from '@ant-design/icons-vue';
 import { SearchOutlined } from '@ant-design/icons-vue';
+import type { CSSProperties } from 'vue';
 
-interface DelayLoading {
-  delay: number;
+const headerStyle: CSSProperties = {
+  textAlign: 'center',
+  color: '#fff',
+  height: 64,
+  paddingInline: 50,
+  lineHeight: '64px',
+  backgroundColor: '#7dbcea',
+};
+
+const contentStyle: CSSProperties = {
+  textAlign: 'center',
+  minHeight: 120,
+  lineHeight: '120px',
+  color: '#fff',
+  backgroundColor: '#108ee9',
+};
+
+const footerStyle: CSSProperties = {
+  textAlign: 'center',
+  color: '#fff',
+  backgroundColor: '#7dbcea'
+};
+
+const siderStyle: CSSProperties = {
+  textAlign: 'center',
+  lineHeight: '120px',
+  color: '#fff',
+  backgroundColor: '#3ba0e9',
+
 }
-export default defineComponent({
-  components: { PoweroffOutlined },
-  setup() {
-    const iconLoading = ref<boolean | DelayLoading>(false);
-    const enterIconLoading = () => {
-      iconLoading.value = { delay: 1000 };
 
-      setTimeout(() => {
-        iconLoading.value = false;
-      }, 6000);
-    };
-    return {
-      loading: ref(false),
-      iconLoading,
-      enterIconLoading,
-    };
-  },
-});
+
+
+
+// interface DelayLoading {
+//   delay: number;
+// }
+// export default defineComponent({
+//   components: { PoweroffOutlined },
+//   setup() {
+//     const iconLoading = ref<boolean | DelayLoading>(false);
+//     const enterIconLoading = () => {
+//       iconLoading.value = { delay: 1000 };
+//
+//       setTimeout(() => {
+//         iconLoading.value = false;
+//       }, 6000);
+//     return {
+//       loading: ref(false),
+//       iconLoading,
+//       enterIconLoading,
+//     };
+//
+// }}})
+
+
 </script>
+
+
 
 
 <script setup>
